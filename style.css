@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #202027;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.container {
+    width: min(1200px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.hero {
+    min-height: 710px;
+    padding-block: 196px 64px;
+    background-color: #e1ff8f;
+    background-image:
+        url("./images/hero-stars-left.svg"),
+        url("./images/hero-decor-right.svg");
+    background-repeat: no-repeat;
+    background-position: center top, right top;
+    background-size: min(100%, 1440px) auto;
+}
+
+.hero__title {
+    margin: 0 0 24px;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 78px;
+}
+
+.hero__text {
+    margin: 0 0 48px;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.hero__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 247px;
+    min-height: 66px;
+    border: 1px solid #202027;
+    border-radius: 60px;
+    background-color: #202027;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hero__link:hover,
+.hero__link:focus-visible {
+    background-color: #fff;
+    color: #202027;
+}
+
+.about {
+    padding: 94px 0;
+    background-color: #202027;
+    background-image: url("./images/about-decor.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: min(100%, 1440px) auto;
+    color: #fff;
+}
+
+.about__title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 1.22;
+}
+
+.animated-strip {
+    height: 90px;
+    background-color: #bcec30;
+    background-image: url("./images/animated-strip.svg");
+    background-repeat: repeat-x;
+    background-size: 3220px 90px;
+    background-position: 0 0;
+    animation: strip-scroll 40s linear infinite;
+}
+
+@keyframes strip-scroll {
+    to {
+        background-position: -3220px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animated-strip {
+        animation: none;
+    }
+}
+
+
+/* Стилистика картрчек игр */
+.about__games {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.game-card__image {
+    display: block;
+    width: 100%;
+}
+
+.game-card {
+    display: block;
+    background-color: #fff;
+    color: #202027;
+    text-decoration: none;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.03);
+}
+
+.game-card__content {
+    padding: 32px;
+}
+
+.game-card__number {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+.game-card__title {
+    margin: 16px 0 0;
+    font-size: 32px;
+    line-height: 1.22;
+}
+
+@media (min-width: 1280px) {
+    .about__games > li:nth-child(4),
+    .about__games > li:nth-child(6) {
+        margin-top: -39px;
+    }
+}
+
+.about__text {
+    max-width: 720px;
+    margin: 24px 0 72px;
+    font-size: 24px;
+    line-height: 32px;
+}
+
